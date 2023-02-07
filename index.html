@@ -15,6 +15,7 @@
         // console.log(getComputerChoice());
         
         playRound = (playerSelection, computerSelection) => {
+            playerSelection = prompt("Choose 'rock', 'paper' or 'scissors'")
             playerChoice = playerSelection.toLowerCase();
             if (playerChoice == computerSelection) {
                 return "The game is tied!"
@@ -30,10 +31,20 @@
                 return "You lose! Scissors beat paper"
             } else if (playerChoice == "rock" && computerSelection == "paper") {
                 return "You lose! Paper beats rock"
+            } else {
+                return "Did you select 'rock', 'paper' or 'scissors'? You didn't, I know."
             }
         };
 
-        console.log(playRound("rock", getComputerChoice()))
+        game = (getComputerChoice, playRound) => {
+            for (let i = 0; i < 5; i++) {
+                let result = playRound(playerSelection, getComputerChoice);
+                console.log(playerSelection);
+                console.log(getComputerChoice);
+                
+                console.log(result)
+            }
+        }
     </script>
 </head>
 <body>
