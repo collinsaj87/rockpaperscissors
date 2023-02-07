@@ -7,17 +7,33 @@
     <title>Document</title>
     <script>
         getComputerChoice = () => {
-            let choices = ["rock", "paper", "scissors"]
-            let selection = choices[Math.floor(Math.random() * 3)]
+            let choices = ["rock", "paper", "scissors"];
+            let selection = choices[Math.floor(Math.random() * 3)];
             return selection 
         };
 
         // console.log(getComputerChoice());
         
         playRound = (playerSelection, computerSelection) => {
-            
-        }
+            playerChoice = playerSelection.toLowerCase();
+            if (playerChoice == computerSelection) {
+                return "The game is tied!"
+            } else if (playerChoice == "rock" && computerSelection == "scissors") {
+                return "You win! Rock beats scissors"
+            } else if (playerChoice == "scissors" && computerSelection == "paper") {
+                return "You win! Scissors beat paper"
+            } else if (playerChoice == "paper" && computerSelection == "rock") {
+                return "You win! Paper beats rock"
+            } else if (playerChoice == "scissors" && computerSelection == "rock") {
+                return "You lose! Rock beats scissors"
+            } else if (playerChoice == "paper" && computerSelection == "scissors") {
+                return "You lose! Scissors beat paper"
+            } else if (playerChoice == "rock" && computerSelection == "paper") {
+                return "You lose! Paper beats rock"
+            }
+        };
 
+        console.log(playRound("rock", getComputerChoice()))
     </script>
 </head>
 <body>
